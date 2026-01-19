@@ -9,19 +9,30 @@
     <title>Sample landing page</title>
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <button class="open-sidebar-button" onclick="openSidebar()" aria-label="open the sidebar" aria-expanded="false" aria-controls="navBar">
+        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z"/></svg>
+    </button>
+    
+    <header id="navBar">
         <nav>
-            <button class="menu">&#9776</button>
-            <a href="#" class="logo">EMBER</a>
             <ul class="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Location</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
+                <li class="close-sidebar-li">
+                    <button class="close-sidebar-button" onclick="closeSidebar()" aria-label="close the sidebar">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="m480-444.62-209.69 209.7q-7.23 7.23-17.5 7.42-10.27.19-17.89-7.42-7.61-7.62-7.61-17.7 0-10.07 7.61-17.69L444.62-480l-209.7-209.69q-7.23-7.23-7.42-17.5-.19-10.27 7.42-17.89 7.62-7.61 17.7-7.61 10.07 0 17.69 7.61L480-515.38l209.69-209.7q7.23-7.23 17.5-7.42 10.27-.19 17.89 7.42 7.61 7.62 7.61 17.7 0 10.07-7.61 17.69L515.38-480l209.7 209.69q7.23 7.23 7.42 17.5.19 10.27-7.42 17.89-7.62 7.61-17.7 7.61-10.07 0-17.69-7.61L480-444.62Z"/></svg>
+                    </button>
+                </li>
+                <li class="home"><a href="#" aria-current="page">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#review">Review</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
         </nav>
     </header>
+    
+    <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
 
     <main>
         <section class="hero">
@@ -29,11 +40,19 @@
                 <h1>Food that feels like home</h1>
                 <h2>Modern comfort dishes made fresh every day.</h2>
                 <a class="cta" href="#menu">View menu</a>
+                <div class="social-proof-1">
+                    <div class="review-star">
+                        <h3>5 star!</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
+                    </div>
+                    <span class="numberReview">3,000+ review!</span>
+                </div>
             </div>
             <div class="hero-right">
-                <div class="social-proof-1">
-                    
-                </div>
                 <div>
                     <img src="./assets/images/Comfort food feast on rustic table.png" alt="Comfort food feast on rustic table">
                 </div>
@@ -42,41 +61,102 @@
 
         <section class="menu" id="menu">
             <h2>Menu</h2>
-            <div class="carousel">
-                <div class="group">
-                    <div class="card">1</div>
-                    <div class="card">2</div>
-                    <div class="card">3</div>
-                    <div class="card">4</div>
-                    <div class="card">5</div>
-                    <div class="card">6</div>
+            <div class="menu-grid">
+                <article class="menu-item">
+                    <h3>Smoked Chicken Rice Bowl</h3>
+                    <p>Tender smoked chicken, jasmine rice, soft egg, and house soy glaze.</p>
+                    <span class="price">$12</span>
+                </article>
+
+                <article class="menu-item">
+                    <h3>Slow-Braised Beef Stew</h3>
+                    <p>Rich beef stew simmered for hours with carrots and potatoes.</p>
+                    <span class="price">$15</span>
+                </article>
+
+                <article class="menu-item">
+                    <h3>Grilled Garlic Pork</h3>
+                    <p>Char-grilled pork shoulder with garlic oil and seasonal greens.</p>
+                    <span class="price">$13</span>
+                </article>
+
+                <article class="menu-item">
+                    <h3>Creamy Mushroom Pasta</h3>
+                    <p>Mixed mushrooms, cream sauce, black pepper, and parmesan.</p>
+                    <span class="price">$11</span>
+                </article>
+
+                <article class="menu-item">
+                    <h3>Classic Comfort Fried Rice</h3>
+                    <p>Wok-fried rice with egg, scallion, and house seasoning.</p>
+                    <span class="price">$9</span>
+                </article>
                 </div>
-            </div>
+
         </section>
 
-        <section class="features">
+        <section class="features" id="main-content">
             <article>
                 <h2>Why EMBER?</h2>
                 <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <h3>Comfort, done properly</h3>
+                        <p>Modern comfort dishes made fresh every day, using familiar flavors without cutting corners. Reliable food that people actually want to come back for.</p>
+                    </li>
+                    <li>
+                        <h3>Consistent quality, not hype</h3>
+                        <p>Tight menu, controlled process, and repeatable results. What customers get today is what they can expect next time.</p>
+                    </li>
+                    <li>
+                        <h3>A place that feels warm, not generic</h3>
+                        <p>Thoughtful atmosphere, honest branding, and food that fits the space. EMBER feels human, not mass-produced.</p>
+                    </li>
                 </ol>
             </article>
             
 
-            <section class="social-proof-2">
+            <section class="social-proof-2" id="review">
+                <h2>What people say</h2>
 
+                <div class="reviews">
+                <blockquote>
+                    <p>“Simple food done right. Nothing flashy, just solid and comforting.”</p>
+                    <cite>— Alex R.</cite>
+                </blockquote>
+
+                <blockquote>
+                    <p>“Feels like a place you can come back to every week.”</p>
+                    <cite>— Mina K.</cite>
+                </blockquote>
+
+                <blockquote>
+                    <p>“Consistent quality. That’s rare these days.”</p>
+                    <cite>— Daniel T.</cite>
+                </blockquote>
+                </div>
             </section>
 
             <section class="more-details">
-                <section class="location">
-
+                <section id="location">
+                    <h3>Location</h3>
+                    <p>123 Ember Street, Downtown</p>
+                    <p>Bangkok, Thailand</p>
+                    <p>Near Central Plaza</p>
                 </section>
 
-                <section class="hour">
-
+                <section id="contact">
+                    <h3>Contact</h3>
+                    <p>Phone: +66 81 234 5678</p>
+                    <p>Email: hello@ember-kitchen.com</p>  
                 </section>
+
+                <section id="about">
+                    <p>
+                        EMBER is a small kitchen focused on comfort food that people actually want to eat.
+                        No gimmicks. No over-designed plates. Just familiar flavors done carefully.
+                    </p>
+                </section>
+
             </section>
 
             <a href="#" class="cta">Reserve a table!</a>
@@ -85,7 +165,14 @@
     </main>
 
     <footer>
-        
+        <div class="footer-content">
+            <p>© 2026 EMBER Kitchen. All rights reserved.</p>
+            <nav>
+                <a href="#menu">Menu</a>
+                <a href="#review">Reviews</a>
+                <a href="#contact">Contact</a>
+            </nav>    
+        </div>
     </footer>
 </body>
 </html>
