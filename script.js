@@ -1,13 +1,13 @@
-const navBar = document.getElementById('navBar');
+const navBar = document.getElementById('site-header');
 const openButton = document.querySelector('.open-sidebar-button');
-const navLinks = document.querySelectorAll('nav a');
+const navLinks = navBar.querySelectorAll('');
 const media = window.matchMedia("(width < 700px)");
 
 media.addEventListener('change', (e) => updateNavBar(e))
 
 function updateNavBar(e) {
-    const isMoblie = e.matches;
-    if(isMoblie){
+    const isMobile = e.matches;
+    if(isMobile){
         navBar.setAttribute('inert', '');
     }
     else{
@@ -28,8 +28,6 @@ function closeSidebar(){
 }
 
 navLinks.forEach(link => {
-    link.addEventListener('click', () =>{
-        closeSidebar();
-})})
+    link.addEventListener('click', closeSidebar)})
 
 updateNavBar(media);
