@@ -11,51 +11,45 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <button class="open-sidebar-button" onclick="openSidebar()" aria-label="open the sidebar" aria-expanded="false" aria-controls="navBar">
+    <button class="open-sidebar-button" onclick="openSidebar()" aria-label="open the sidebar" aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z"/></svg>
     </button>
     
-    <header id="navBar">
+    <header id="site-header">
         <nav>
             <ul class="nav-list">
+                <li class="logo"><img src="./assets/images/Icon.png" alt="UmbraCode's logo"></li>
                 <li class="close-sidebar-li">
                     <button class="close-sidebar-button" onclick="closeSidebar()" aria-label="close the sidebar">
                         <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="m480-444.62-209.69 209.7q-7.23 7.23-17.5 7.42-10.27.19-17.89-7.42-7.61-7.62-7.61-17.7 0-10.07 7.61-17.69L444.62-480l-209.7-209.69q-7.23-7.23-7.42-17.5-.19-10.27 7.42-17.89 7.62-7.61 17.7-7.61 10.07 0 17.69 7.61L480-515.38l209.69-209.7q7.23-7.23 17.5-7.42 10.27-.19 17.89 7.42 7.61 7.62 7.61 17.7 0 10.07-7.61 17.69L515.38-480l209.7 209.69q7.23 7.23 7.42 17.5.19 10.27-7.42 17.89-7.62 7.61-17.7 7.61-10.07 0-17.69-7.61L480-444.62Z"/></svg>
                     </button>
                 </li>
-                <li class="home"><a href="#" aria-current="page">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#review">Review</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About</a></li>
+                <li class="home link"><a href="/" aria-current="page">Home</a></li>
+                <li class="link"><a href="#menu">Menu</a></li>
+                <li class="link"><a href="#review">Review</a></li>
+                <li class="link"><a href="#contact">Contact</a></li>
+                <li class="link"><a href="#about">About</a></li>
             </ul>
         </nav>
     </header>
     
-    <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+    <div id="overlay" onclick="closeSidebar()"></div>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-left">
                 <h1>Food that feels like home</h1>
                 <h2>Modern comfort dishes made fresh every day.</h2>
-                <a class="cta" href="#menu">View menu</a>
                 <div class="social-proof-1">
-                    <div class="review-star">
-                        <h3>5 star!</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
+                    <h3 class="number-review">3,000+ review!</h3>
+                    <div class="review-star">    
+                        <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 86.832"><defs><linearGradient id="prefix__a" gradientUnits="userSpaceOnUse" x1="45.578" y1="3.495" x2="45.579" y2="64.504"><stop offset="0" stop-color="#FFD433"/><stop offset=".471" stop-color="#FABE2B"/><stop offset="1" stop-color="#F4A722"/></linearGradient><linearGradient id="prefix__b" gradientUnits="userSpaceOnUse" x1="151.001" y1="3.495" x2="151.002" y2="64.504"><stop offset="0" stop-color="#FFD433"/><stop offset=".471" stop-color="#FABE2B"/><stop offset="1" stop-color="#F4A722"/></linearGradient><linearGradient id="prefix__c" gradientUnits="userSpaceOnUse" x1="256.423" y1="3.495" x2="256.425" y2="64.504"><stop offset="0" stop-color="#FFD433"/><stop offset=".471" stop-color="#FABE2B"/><stop offset="1" stop-color="#F4A722"/></linearGradient><linearGradient id="prefix__d" gradientUnits="userSpaceOnUse" x1="361.846" y1="3.495" x2="361.848" y2="64.504"><stop offset="0" stop-color="#FFD433"/><stop offset=".471" stop-color="#FABE2B"/><stop offset="1" stop-color="#F4A722"/></linearGradient><linearGradient id="prefix__e" gradientUnits="userSpaceOnUse" x1="467.269" y1="3.495" x2="467.27" y2="64.504"><stop offset="0" stop-color="#FFD433"/><stop offset=".471" stop-color="#FABE2B"/><stop offset="1" stop-color="#F4A722"/></linearGradient></defs><path fill="#F0B100" fill-rule="nonzero" d="M69.462 55.479l4.885 28.637a2.356 2.356 0 01-.246 1.484 2.322 2.322 0 01-3.14.955L45.278 72.818l-25.58 13.681a2.324 2.324 0 01-3.489-2.365l4.719-28.643L.737 34.906a2.31 2.31 0 01-.714-1.369 2.328 2.328 0 011.975-2.631l28.203-4.038L43.197 1.29a2.325 2.325 0 014.157-.011L60.236 26.87l28.078 4.036a2.324 2.324 0 011.337 3.923l-20.189 20.65z"/><path fill="url(#prefix__a)" d="M72.053 84.507L66.97 54.706l21.016-21.497L58.706 29 45.278 2.325 31.725 29 2.326 33.209l21.087 21.497-4.91 29.801 26.775-14.321z"/><path fill="#F0B100" fill-rule="nonzero" d="M174.885 55.479l4.885 28.637a2.356 2.356 0 01-.246 1.484 2.322 2.322 0 01-3.14.955l-25.683-13.737-25.58 13.681a2.324 2.324 0 01-3.489-2.365l4.719-28.643-20.192-20.585a2.328 2.328 0 011.262-4l28.203-4.038L148.62 1.29a2.325 2.325 0 014.157-.011l12.882 25.591 28.077 4.036a2.324 2.324 0 011.338 3.923l-20.189 20.65z"/><path fill="url(#prefix__b)" d="M177.476 84.507l-5.083-29.801 21.016-21.497L164.128 29 150.701 2.325 137.149 29l-29.4 4.209 21.087 21.497-4.911 29.801 26.776-14.321z"/><path fill="#F0B100" fill-rule="nonzero" d="M280.308 55.479l4.885 28.637a2.363 2.363 0 01-.246 1.484 2.322 2.322 0 01-3.14.955l-25.683-13.737-25.58 13.681a2.325 2.325 0 01-3.49-2.365l4.72-28.643-20.192-20.585a2.328 2.328 0 011.262-4l28.203-4.038L254.043 1.29a2.325 2.325 0 014.157-.011l12.881 25.591 28.078 4.036a2.324 2.324 0 011.338 3.923l-20.189 20.65z"/><path fill="url(#prefix__c)" d="M282.899 84.507l-5.083-29.801 21.016-21.497L269.551 29 256.124 2.325 242.571 29l-29.399 4.209 21.087 21.497-4.91 29.801 26.775-14.321z"/><path fill="#F0B100" fill-rule="nonzero" d="M385.731 55.479l4.885 28.637a2.363 2.363 0 01-.247 1.484 2.321 2.321 0 01-3.14.955l-25.682-13.737-25.58 13.681a2.326 2.326 0 01-3.49-2.365l4.72-28.643-20.192-20.585a2.328 2.328 0 011.262-4l28.203-4.038L359.466 1.29a2.324 2.324 0 014.156-.011l12.883 25.591 28.077 4.036a2.324 2.324 0 011.338 3.923l-20.189 20.65z"/><path fill="url(#prefix__d)" d="M388.322 84.507l-5.083-29.801 21.016-21.497L374.974 29 361.547 2.325 347.994 29l-29.399 4.209 21.087 21.497-4.911 29.801 26.776-14.321z"/><path fill="#F0B100" fill-rule="nonzero" d="M491.153 55.479l4.885 28.637a2.356 2.356 0 01-.246 1.484 2.322 2.322 0 01-3.14.955l-25.683-13.737-25.58 13.681a2.324 2.324 0 01-3.489-2.365l4.719-28.643-20.192-20.585a2.328 2.328 0 011.262-4l28.203-4.038L464.888 1.29a2.325 2.325 0 014.157-.011l12.882 25.591 28.077 4.036a2.324 2.324 0 011.338 3.923l-20.189 20.65z"/><path fill="url(#prefix__e)" d="M493.744 84.507l-5.083-29.801 21.016-21.497L480.396 29 466.969 2.325 453.417 29l-29.4 4.209 21.087 21.497-4.911 29.801 26.776-14.321z"/></svg>
                     </div>
-                    <span class="numberReview">3,000+ review!</span>
                 </div>
+                <a class="cta" href="#menu">View menu</a>
             </div>
             <div class="hero-right">
-                <div>
-                    <img src="./assets/images/Comfort food feast on rustic table.png" alt="Comfort food feast on rustic table">
-                </div>
+                <img src="./assets/images/Comfort food feast on rustic table.png" alt="Assorted comfort dishes served at EMBER Kitchen">
             </div>
         </section>
 
@@ -91,11 +85,12 @@
                     <p>Wok-fried rice with egg, scallion, and house seasoning.</p>
                     <span class="price">$9</span>
                 </article>
-                </div>
+
+            </div>
 
         </section>
 
-        <section class="features" id="main-content">
+        <section class="features">
             <article>
                 <h2>Why EMBER?</h2>
                 <ol>
@@ -119,20 +114,20 @@
                 <h2>What people say</h2>
 
                 <div class="reviews">
-                <blockquote>
-                    <p>“Simple food done right. Nothing flashy, just solid and comforting.”</p>
-                    <cite>— Alex R.</cite>
-                </blockquote>
+                    <blockquote>
+                        <p>“Simple food done right. Nothing flashy, just solid and comforting.”</p>
+                        <cite>— Alex R.</cite>
+                    </blockquote>
 
-                <blockquote>
-                    <p>“Feels like a place you can come back to every week.”</p>
-                    <cite>— Mina K.</cite>
-                </blockquote>
+                    <blockquote>
+                        <p>“Feels like a place you can come back to every week.”</p>
+                        <cite>— Mina K.</cite>
+                    </blockquote>
 
-                <blockquote>
-                    <p>“Consistent quality. That’s rare these days.”</p>
-                    <cite>— Daniel T.</cite>
-                </blockquote>
+                    <blockquote>
+                        <p>“Consistent quality. That’s rare these days.”</p>
+                        <cite>— Daniel T.</cite>
+                    </blockquote>
                 </div>
             </section>
 
@@ -151,6 +146,7 @@
                 </section>
 
                 <section id="about">
+                    <h3>About</h3>
                     <p>
                         EMBER is a small kitchen focused on comfort food that people actually want to eat.
                         No gimmicks. No over-designed plates. Just familiar flavors done carefully.
@@ -158,20 +154,18 @@
                 </section>
 
             </section>
-
-            <a href="#" class="cta">Reserve a table!</a>
-
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>© 2026 EMBER Kitchen. All rights reserved.</p>
+            <div class="logo"><img src="./assets/images/Icon.png"></div>
             <nav>
                 <a href="#menu">Menu</a>
                 <a href="#review">Reviews</a>
                 <a href="#contact">Contact</a>
             </nav>    
+            <small>© 2026 EMBER Kitchen. All rights reserved.</small>
         </div>
     </footer>
 </body>
