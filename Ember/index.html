@@ -17,7 +17,6 @@
 
     <button
       class="open-sidebar-button"
-      onclick="openSidebar()"
       aria-label="open the sidebar"
       aria-expanded="false"
     >
@@ -37,15 +36,11 @@
     <header id="site-header">
       <nav>
         <ul class="nav-list">
-          <li class="logo">
-            <img src="./assets/images/Icon.png" alt="UmbraCode's logo" />
+          <li>
+            <span class="logo">Ember</span>
           </li>
           <li class="close-sidebar-li">
-            <button
-              class="close-sidebar-button"
-              onclick="closeSidebar()"
-              aria-label="close the sidebar"
-            >
+            <button class="close-sidebar-button" aria-label="close the sidebar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="40px"
@@ -68,7 +63,7 @@
       </nav>
     </header>
 
-    <div id="overlay" onclick="closeSidebar()"></div>
+    <div id="overlay"></div>
 
     <main id="main-content">
       <section class="hero">
@@ -328,7 +323,6 @@
 
     <footer>
       <div class="footer-content">
-        <div class="logo"><img src="./assets/images/Icon.png" /></div>
         <nav>
           <a href="#menu">Menu</a>
           <a href="#review">Reviews</a>
