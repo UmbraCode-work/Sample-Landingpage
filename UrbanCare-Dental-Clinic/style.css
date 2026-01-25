@@ -56,6 +56,9 @@ h6 {
     transition: none !important;
     animation: none !important;
   }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 :root {
@@ -89,6 +92,14 @@ h6 {
   --space-7: 8rem;
 
   --container-width: 90%;
+  --z-header: 10;
+  --z-overlay: 11;
+  --z-navBar: 12;
+  --z-skip-link: 100;
+
+  --border-width-card: 0.125rem;
+  --border-width-button: 0.1rem;
+  --border-width-image: 0.125rem;
 }
 
 h1 {
@@ -120,6 +131,10 @@ ul {
   padding-left: 0px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
@@ -129,10 +144,10 @@ body {
 
 header {
   width: 100%;
-  height: auto;
   display: flex;
-  position: fixed;
-  z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
   background-color: var(--color-bar-bg);
   justify-content: flex-start;
   align-items: center;
@@ -162,9 +177,10 @@ nav {
   top: 0;
   right: -100%;
   width: max(50vw, 15rem);
+  height: 100vh;
   height: 100dvh;
   background-color: var(--color-bar-bg);
-  z-index: 20;
+  z-index: var(--z-navBar);
   transition: right 300ms ease;
   padding: var(--space-2);
 }
@@ -176,7 +192,7 @@ nav.show {
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 19;
+  z-index: var(--z-overlay);
   display: none;
 }
 
@@ -196,24 +212,24 @@ button {
   background-color: aliceblue;
   padding: var(--space-1);
   border-radius: var(--space-2);
-  border: 0.1rem solid black;
+  border: var(--border-width-button) solid black;
   transition:
-    transform 150ms ease,
-    box-shadow 150ms ease;
+    transform 200ms ease,
+    background-color 200ms ease;
 }
 
 button:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 2px 2px 2px black;
+  transform: scale(1.1);
 }
 
 button:active {
-  transform: translate(0px, 0px);
-  box-shadow: 0rem 0rem 0rem black;
+  transform: scale(0.9);
+  background-color: #c3ffc3;
 }
 
 button img {
   width: 50px;
+  height: auto;
 }
 
 .cta {
@@ -226,7 +242,6 @@ main {
 
 footer {
   width: 100%;
-  height: auto;
   background-color: var(--color-bar-bg);
   padding: var(--space-5);
   display: flex;
@@ -248,6 +263,16 @@ footer ul {
   position: absolute;
   top: -100px;
   left: 10px;
+  background-color: black;
+  padding: var(--space-1);
+  border-radius: var(--space-2);
+  border: var(--border-width-button) solid black;
+  z-index: var(--z-skip-link);
+}
+
+.skip-link:focus-visible {
+  top: var(--space-2);
+  outline: 0.1rem solid lightgreen;
 }
 
 section {
@@ -268,11 +293,21 @@ section {
   width: 100%;
   padding: var(--space-2);
   border-radius: var(--space-2);
-  border: 0.1rem solid var(--color-text);
+  border: var(--border-width-card) solid var(--color-text);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-2);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
 }
 
 .hero {
@@ -281,7 +316,6 @@ section {
 }
 
 .hero .container {
-  padding-top: 80px;
   gap: var(--space-3);
   display: grid;
   grid-template-rows: 1fr 2fr;
@@ -301,7 +335,7 @@ section {
 
 .hero-image-card img {
   border-radius: var(--space-3);
-  border: 0.1rem solid black;
+  border: var(--border-width-image) solid black;
 }
 
 .problems-solutions ul {
@@ -316,7 +350,7 @@ section {
 }
 
 .problems-solutions li:last-child .card {
-  border-bottom: 0.1rem solid black;
+  border-bottom: var(--border-width-card) solid black;
 }
 
 #services ul {
@@ -327,17 +361,11 @@ section {
 
 #services .card {
   width: auto;
-  padding: var(--space-1);
-  border-width: 0.15rem;
 }
 
 .misc section {
   display: grid;
   place-items: center;
-}
-
-#testimonials .card {
-  border-width: 0.1rem 0.25rem;
 }
 
 .cta-section .card {
@@ -360,7 +388,26 @@ section {
 #contact input {
   border: 0.1rem solid rgb(0, 91, 91);
   border-radius: var(--space-1);
-  padding: 0.1rem;
+  padding: 0.4rem 0.6rem;
+}
+
+input:focus {
+  outline: 0.1rem solid rgb(88, 255, 255);
+}
+
+input[type="text"]:valid,
+input[type="tel"]:valid,
+input[type="date"]:valid {
+  outline: 0.1rem solid rgb(87, 255, 87);
+}
+
+input[type="text"]:invalid,
+input[type="tel"]:invalid {
+  outline: 0.1rem solid rgb(255, 59, 59);
+}
+
+#contact input:placeholder-shown {
+  outline: none;
 }
 
 li a {
@@ -372,11 +419,22 @@ li a:hover {
   color: rgb(227, 206, 255);
 }
 
-a:not(.logo):visited {
+main a:visited {
   color: rgb(227, 206, 255);
 }
 
+button:focus-visible,
+a:focus-visible {
+  outline: 0.15rem solid lightgreen;
+}
+
 @media (min-width: 769px) {
+  :root {
+    --border-width-card: 0.15rem;
+    --border-width-image: 0.15rem;
+    --border-width-button: 0.125rem;
+  }
+
   .card {
     padding: var(--space-3);
     gap: var(--space-3);
@@ -441,6 +499,12 @@ a:not(.logo):visited {
 }
 
 @media (min-width: 1025px) {
+  :root {
+    --border-width-card: 0.175rem;
+    --border-width-image: 0.175rem;
+    --border-width-button: 0.15rem;
+  }
+
   section {
     padding: var(--space-6) 0;
   }
@@ -456,6 +520,12 @@ a:not(.logo):visited {
 }
 
 @media (min-width: 1441px) {
+  :root {
+    --border-width-card: 0.2rem;
+    --border-width-image: 0.2rem;
+    --border-width-button: 0.175rem;
+  }
+
   section {
     padding: var(--space-7) 0;
   }

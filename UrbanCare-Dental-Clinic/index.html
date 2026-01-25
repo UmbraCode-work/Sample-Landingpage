@@ -5,39 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./assets/images/burger-menu-svgrepo-com.svg"
-    />
     <title>UrbanCare Dental Clinic</title>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
       <a href="/" class="logo">UrbanCare Dental</a>
-      <nav id="primary-navigation">
+      <nav id="primary-navigation" aria-label="Primary">
+        <button
+          class="close-sidebar"
+          aria-label="Close navigation menu"
+          aria-controls="primary-navigation"
+        >
+          <img
+            src="./assets/images/close-svgrepo-com.svg"
+            alt="Close navigation menu"
+            aria-hidden="true"
+          />
+        </button>
         <ul>
-          <li>
-            <button
-              class="close-sidebar"
-              aria-label="Close navigation menu"
-              aria-controls="primary-navigation"
-            >
-              <img
-                src="./assets/images/close-svgrepo-com.svg"
-                alt="Close navigation menu"
-                aria-hidden="true"
-              />
-            </button>
-          </li>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="overlay" aria-hidden="true"></div>
-      <button class="cta">Book Appointment</button>
+      <button class="cta" data-scroll="#contact">Book Appointment</button>
       <button
         class="open-sidebar"
         aria-label="Open navigation menu"
@@ -59,12 +52,12 @@
               Comprehensive dental services designed for busy professionals who
               value efficiency, comfort, and clarity
             </p>
-            <button class="cta" id="cta-1">Book Appointment</button>
+            <button class="cta" data-scroll="#contact">Book Appointment</button>
           </div>
           <div class="hero-image-card">
             <img
-              src="./assets/images/benyamin-bohlouli-e7MJLM5VGjY-unsplash.jpg"
-              alt="clinic image"
+              src="./assets/images/10435.jpg"
+              alt="Interior of UrbanCare Dental Clinic treatment room"
             />
           </div>
         </div>
@@ -172,21 +165,29 @@
           <div class="container">
             <h2>Testimonials</h2>
             <div class="card">
-              <blockquote>
-                <p>
-                  “Appointments start on time and everything is clearly
-                  explained.”
-                </p>
-                <cite>— Office Professional, Age 32</cite>
-              </blockquote>
-              <blockquote>
-                <p>“Clean, modern clinic with efficient service.”</p>
-                <cite>— Office Professional, Age 40</cite>
-              </blockquote>
-              <blockquote>
-                <p>“Professional staff and predictable pricing.”</p>
-                <cite>— Office Professional, Age 26</cite>
-              </blockquote>
+              <ul>
+                <li>
+                  <blockquote>
+                    <p>
+                      “Appointments start on time and everything is clearly
+                      explained.”
+                    </p>
+                    <cite>— Office Professional, Age 32</cite>
+                  </blockquote>
+                </li>
+                <li>
+                  <blockquote>
+                    <p>“Clean, modern clinic with efficient service.”</p>
+                    <cite>— Office Professional, Age 40</cite>
+                  </blockquote>
+                </li>
+                <li>
+                  <blockquote>
+                    <p>“Professional staff and predictable pricing.”</p>
+                    <cite>— Office Professional, Age 26</cite>
+                  </blockquote>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -194,7 +195,9 @@
           <div class="container">
             <div class="card">
               <h2>Ready to Take Care of Your Smile?</h2>
-              <button class="cta">Book Appointment</button>
+              <button class="cta" data-scroll="#contact">
+                Book Appointment
+              </button>
             </div>
           </div>
         </section>
@@ -229,11 +232,25 @@
               <form action="#" method="post">
                 <label>
                   Full Name
-                  <input type="text" name="full-name" required />
+                  <input
+                    type="text"
+                    name="full-name"
+                    autocomplete="name"
+                    placeholder="John Doe"
+                    minlength="5"
+                    maxlength="50"
+                    required
+                  />
                 </label>
                 <label>
                   Phone Number
-                  <input type="tel" name="phone" required />
+                  <input
+                    type="tel"
+                    name="phone"
+                    autocomplete="tel"
+                    placeholder="02-XXX-XXXX"
+                    required
+                  />
                 </label>
                 <label>
                   Preferred Time
@@ -259,7 +276,7 @@
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#cta-1">Book Appointment</a></li>
+          <li><a href="#contact">Book Appointment</a></li>
         </ul>
       </div>
       <div>
